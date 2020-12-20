@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true"
+assembly="Hotel"
+namespace="Hotel.clases">
+  <class name="Hotel.clases.Alojamiento,Hotel" table="Alojamiento"
+  xmlns="urn:nhibernate-mapping-2.2">
+    <id name="Id" column="Id" type="int" >
+      <generator class="native" />
+    </id>
+    <property name="FechaEntrada" column="fechaEntrada" type="DateTime"></property>
+    <property name="FechaSalida" column="fechaSalida" type="DateTime"></property>
+    <property name="ImporteServicios" column="importeServicios" type="float"></property>
+    <property name="ImporteHabitacion" column="importeHabitacion" type="float"></property>
+    <many-to-one name="Habitacion_" class="Habitacion" column="idHabitacion" />
+    <many-to-one name="Huesped_" class="Huesped" column="idHuesped" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true"
+assembly="Hotel"
+namespace="Hotel.clases">
+  <class name="Hotel.clases.Huesped,Hotel" table="Huesped"
+  xmlns="urn:nhibernate-mapping-2.2">
+    <id name="Id" column="Id" type="int" >
+      <generator class="native" />
+    </id>
+    <property name="Nombre" column="nombre" type="String"></property>
+    <property name="NumeroTarjeta" column="numeroTarjeta" type="String"></property>
+    <property name="Dni" column="dni" type="String"></property>
+    <property name="Direccion" column="direccion" type="String"></property>
+    <property name="Telefono" column="telefono" type="String"></property>
+    <bag name="Alojamientos" cascade="all-delete-orphan">
+      <key column="idHuesped" />
+      <one-to-many class="Alojamiento" />
+    </bag>
+  </class>
+</hibernate-mapping>
+

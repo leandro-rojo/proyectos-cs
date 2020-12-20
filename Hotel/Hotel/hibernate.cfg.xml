@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-configuration xmlns="urn:nhibernate-configuration-2.2" >
+  <session-factory>
+    <property
+    name="connection.provider">NHibernate.Connection.DriverConnectionProvider</property>
+    <property name="dialect">
+      NHibernate.JetDriver.JetDialect,
+      NHibernate.JetDriver
+    </property>
+    <property name="connection.driver_class">
+      NHibernate.JetDriver.JetDriver,
+      NHibernate.JetDriver
+    </property>
+    <property name="connection.connection_string">
+      Provider=Microsoft.ACE.OLEDB.12.0;Data Source= Hotel.accdb
+    </property>
+    <mapping resource="Hotel.mapeo.Huesped.hbm.xml" assembly="Hotel" />
+    <mapping resource="Hotel.mapeo.Alojamiento.hbm.xml" assembly="Hotel" />
+    <mapping resource="Hotel.mapeo.Habitacion.hbm.xml" assembly="Hotel" />
+    <mapping resource="Hotel.mapeo.TipoHabitacion.hbm.xml" assembly="Hotel" />
+  </session-factory>
+</hibernate-configuration>
